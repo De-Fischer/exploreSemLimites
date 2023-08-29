@@ -1,0 +1,282 @@
+/*toda página*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /*chrome edge safare*/
+  -moz-osx-font-smoothing: grayscale; /*firefox*/
+}
+
+/*Variáveis*/
+:root {
+  font-size: 62.5%; /*para usar rem*/
+  --base-font: 'Mulish', sans-serif; /*variavel para fonte*/
+  --acent-color:#B52184;
+  --text-base-color: #312D64;
+  --linear-gradient: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: var(--base-font);
+  background-color: #F9F4F8;
+}
+
+/*para as imagens ocuparem 100% da página*/
+img {
+  width: 100%; 
+  display: block;
+}
+
+h1 {
+  /*font-size: 3.2rem;*/
+  /*usando calculo de clamp ele atualiza conforme aumenta a tela*/
+  font-size: 3.2rem;
+  color: var(--acent-color);
+  font-weight: 900;
+  line-height: 4rem;
+  margin: 1.7rem auto 0.5rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  line-height: 4rem;
+  font-weight: 900;
+  color: var(--acent-color);
+  margin-bottom: 4.3rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 3.6rem;
+  color: var(--acent-color);
+  font-weight: 900;
+  margin-bottom: 1.9rem;
+  margin-top: 3.3rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--text-base-color);
+}
+
+button,
+input,
+fieldset,
+textarea {
+  border: none;
+  background: none;
+  font-family: var(--base-font)
+}
+
+/*hero section*/
+/*definindo o padding da classe hero a imagem vai se adaptando do mobile para web*/
+#hero {
+  padding: 0 3.4rem 9.3rem 3.2rem; /*cima direita baixo esquerda*/
+  text-align: center;
+}
+
+#hero .hero-text p{
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/*contorno e flecha*/
+#hero .button-down {
+  width: 5.8rem;
+  height: 10.5rem;
+  display: flex; /*para aplicar a largura e altura e conseguir usar o align center*/
+  border: 4px solid var(--acent-color);
+  border-radius: 76rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /*centralizar*/
+
+  transition: filter 300ms;/*suaviza*/
+}
+
+/*mudar um pouco a cor quando passar o mouse sobre a flechina*/
+#hero .hero-text .button-down:hover {
+  filter: brightness(0.7);
+}
+
+/*flecha*/
+#hero .hero-text .button-down img {
+  width: 3rem; /*deixar a flecha no tamanho certo*/
+}
+
+/*cards section*/
+#cards {
+  background: var(--linear-gradient);
+  padding: 5.3rem 3.9rem 5.5rem;
+  display: grid;
+  gap: 4.9rem;
+}
+
+#cards .card {
+  background: var(--white);
+  padding: 2.6rem;
+  border-radius: 2rem;
+}
+
+#cards .card img {
+  width: 8rem;
+}
+
+/*contact section*/
+#contact {
+  padding: 7.8rem 3.9rem 6.5rem;
+}
+
+#contact form .input-wrapper {
+  margin-bottom: 2.4rem;
+}
+
+/*aplica o estilo para os dois*/
+#contact form input,
+#contact form textarea {
+  border: 0.15rem solid var(--text-base-color);
+  width: 100%; /*ocupa todo espaço disponível*/
+  border-radius: 1.6rem;
+  padding: 1.2rem 1.6rem 1.4rem; /* cima e baixo - direita - esquerda*/
+  color: var(--acent-color);
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+#contact form input {
+  padding-left: 4rem;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--acent-color);
+}
+
+#contact form textarea{
+  height: 12.6rem; /*altura*/
+  resize: none; /*impossibilitar o usuário de modificar o tamanho deste input*/
+}
+
+#contact form button {
+  background: var(--text-base-color);
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  transition: filter 300ms;
+}
+
+#contact form button:hover {
+  filter: brightness(0.9);
+}
+
+#name {
+  background: url(./assets/person.svg) no-repeat 1.4rem; /*aplica backgroun de ícone - não repetir - posição: lateral/superior*/
+}
+
+#email {
+  background: url(./assets/email.svg) no-repeat 1.4rem; /*aplica backgroun de ícone - não repetir - posição: lateral/superior*/
+}
+
+/*footer section*/
+footer {
+  background: var(--linear-gradient);
+  padding: 3.2rem 1.6rem;
+}
+
+footer p {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+
+/* versão web */
+/* vai alterar a partir deste tamanho de tela*/
+@media (min-width: 768px) {
+  h1 {   /*se não usar clamp precisa colocar aqui a atualização do h1*/
+    font-size: 6rem;
+    line-height: 7.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  
+  #hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.9rem 10.3rem 10.9rem; /*topo direita baixo esquerda*/
+    /*max-width: 83.6rem;*/
+  }
+
+  #hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    order: 1; /*ordena primeiro o texto*/
+    margin-top: 25rem;
+  }
+
+  #hero .hero-text p {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 17.9rem;
+  }
+
+  #hero .hero-text .button-down {
+    margin: 0; /*para o botão ir para o canto*/
+  }
+
+  #hero .astronaut {
+    order: 2; /*ordena segundo a imagem*/
+  }
+
+  #cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    padding: 6.4rem 11.1rem 8rem;
+  }
+
+  #cards .card {
+    padding: 3.2rem 1.3rem 3.2rem 3.2rem;
+    border-radius: 2.4rem;
+  }
+
+  #contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9.2rem;
+    height: 62.2rem;
+    background: url(./assets/stars.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-left: 10.9rem;
+  }
+
+  #contact form {
+    flex: 1; 
+  }
+
+  #contact .stars {
+    flex: 1;
+  }
+}
